@@ -1,0 +1,13 @@
+echo "----------------DEVOPS CI/CI STATED---------------------"
+
+echo "CI/CD started by user"
+whoami
+echo "Code stage"
+
+echo "Build stage"
+docker build -t django-app .
+
+echo "Test stage"
+
+echo "Deploy stage"
+docker run -d -p 8000:8000 django-app:latest
